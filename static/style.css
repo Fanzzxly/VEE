@@ -1,0 +1,51 @@
+/* style.css | Magic Mirror v0.1 */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  background: url('/static/assets/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+}
+
+.clock {
+  font-size: 96px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.date {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.greeting {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.weather {
+  font-size: 24px;
+  opacity: 0.9;
+}
