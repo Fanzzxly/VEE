@@ -5,15 +5,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Voice-based Enhanced Entity</title>
+<style>
+  :root {
+    --scale: {{ cfg.scale }};
+    --icon-size: {{ cfg.icon_size }}px;
+  }
+</style>
   <link rel="stylesheet" href="/static/style.css">
 </head>
+
 <body>
   <div class="container">
     <div id="clock" class="clock">--:--</div>
     <div id="date" class="date">--, -- --- ----</div>
     <div id="greeting" class="greeting">...</div>
-    <div id="weather" class="weather">Memuat cuaca...</div>
-  </div>
+    <div class="weather">
+    <img id="weather-icon" src="" alt="Weather Icon" />
+    <div id="weather"></div>
+</div>
+
+
 
   <script src="/static/script.js"></script>
 </body>

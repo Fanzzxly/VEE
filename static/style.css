@@ -1,6 +1,11 @@
-/* style.css | Magic Mirror v0.1 */
+/* style.css | Magic Mirror v0.2 */
 
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+@font-face {
+  font-family: 'More Sugar';
+  src: url('/static/assets/fonts/more_sugar/MoreSugar-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 * {
   margin: 0;
@@ -9,9 +14,11 @@
 }
 
 body {
-  font-family: 'Orbitron', sans-serif;
-  background: url('/static/assets/background.jpg') no-repeat center center fixed;
+  font-family: 'More Sugar', sans-serif;
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 1s ease-in-out;
   color: white;
   height: 100vh;
   overflow: hidden;
@@ -24,28 +31,27 @@ body {
   align-items: center;
   height: 100%;
   text-align: center;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(3px);
   background-color: rgba(0, 0, 0, 0.4);
   padding: 20px;
 }
 
-.clock {
-  font-size: 96px;
-  font-weight: bold;
+#weather-icon {
+  width: var(--icon-size);
+  height: var(--icon-size);
   margin-bottom: 10px;
+  object-fit: contain;
 }
 
+.clock {
+  font-size: calc(96px * var(--scale));
+}
 .date {
-  font-size: 28px;
-  margin-bottom: 20px;
+  font-size: calc(28px * var(--scale));
 }
-
 .greeting {
-  font-size: 32px;
-  margin-bottom: 30px;
+  font-size: calc(32px * var(--scale));
 }
-
 .weather {
-  font-size: 24px;
-  opacity: 0.9;
+  font-size: calc(24px * var(--scale));
 }

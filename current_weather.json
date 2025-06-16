@@ -1,6 +1,5 @@
 {
-  "info": "22°C - fanzi",
-  "icon_url": "http://openweathermap.org/img/wn/04n@2x.png",
-  "city": "Imari",
-  "fetched_at": 1749471564.651912
+  "info": "22°C - Overcast clouds",
+  "icon": "storm",
+  "city": "Imari"
 }
