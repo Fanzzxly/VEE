@@ -26,7 +26,8 @@ DISPLAY_PRESET = {
 CURRENT_DISPLAY = DISPLAY_PRESET[DISPLAY_MODE]
 
 # Paths
-CURRENT_WEATHER_FILE = 'current_weather.json'
+CURRENT_WEATHER_FILE = 'data/current_weather.json'
+FORECAST_CACHE_FILE = 'data/forecast_cache.json'
 ICON_FOLDER = '/static/assets/weather_icon'
 WALLPAPER_FOLDER = '/static/assets/wallpaper'
 

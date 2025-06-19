@@ -1,0 +1,11 @@
+
+
+const WEATHER_REFRESH_INTERVAL = 60 * 60 * 1000;       // 1 jam
+const FORECAST_REFRESH_INTERVAL = 60 * 60 * 1000;      // 1 jam
+const CLOCK_REFRESH_INTERVAL = 1000;                   // 1 detik
+
+export {
+  WEATHER_REFRESH_INTERVAL,
+  FORECAST_REFRESH_INTERVAL,
+  CLOCK_REFRESH_INTERVAL,
+};

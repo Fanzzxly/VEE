@@ -1,6 +1,7 @@
 from flask import Flask, render_template, jsonify
-import json
-from config import CURRENT_DISPLAY, CURRENT_WEATHER_FILE
+from config import CURRENT_DISPLAY
+from current_parser import get_current_weather
+from forecast_parser import get_hourly_forecast, get_daily_forecast
 
 app = Flask(__name__)
 
@@ -14,24 +15,22 @@ def index():
 
 @app.route('/weather')
 def weather():
-    try:
-        with open(CURRENT_WEATHER_FILE, 'r', encoding='utf-8') as f:
-            raw = json.load(f)
-            info_parts = raw.get("info", "").split("-")
-            temp_str = info_parts[0].split("°")[0].strip()
-            desc = info_parts[1].strip() if len(info_parts) > 1 else "Tidak diketahui"
-            city = raw.get('city', 'Tidak diketahui')
-            icon = raw.get('icon', '')
-            
-            return jsonify({
-                "temp": int(temp_str),
-                "desc": desc,
-                "city": city,
-                "icon": icon
-            })
+    data = get_current_weather()
+    status = 500 if "error" in data else 200
+    return jsonify(data), status
 
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
+@app.route('/forecast/hourly')
+def forecast_hourly():
+    data = get_hourly_forecast()
+    status = 500 if "error" in data else 200
+    return jsonify(data), status
+
+@app.route('/forecast/daily')
+def forecast_daily():
+    data = get_daily_forecast()
+    status = 500 if "error" in data else 200
+    return jsonify(data), status
+
 
 if __name__ == '__main__':
     app.run(debug=True)

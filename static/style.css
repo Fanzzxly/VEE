@@ -27,7 +27,7 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   height: 100%;
   text-align: center;
@@ -36,22 +36,61 @@ body {
   padding: 20px;
 }
 
-#weather-icon {
-  width: var(--icon-size);
-  height: var(--icon-size);
+.forecast-hourly {
+  width: 430px; 
+  height: 100px;
+  max-width: 90vw;
+  padding: 12px;
+  border-radius: 60px;
+  background-color: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  margin: 5px auto;
+  box-sizing: border-box;
+}
+
+.forecast-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 15px;
+  gap: 15px;
+  overflow-x: auto;
+}
+
+.forecast-item {
+  text-align: center;
+  color: white;
+  font-size: 0.85em;
+  min-width: 60px;
+  gap: -10px;
+}
+
+.forecast-item img {
+  width: 25px;
+  height: 25px;
+  margin: 2px 0;
+}
+
+
+.clock-wrapper {
+  text-align: center;
   margin-bottom: 10px;
-  object-fit: contain;
 }
 
 .clock {
-  font-size: calc(96px * var(--scale));
+  font-size: calc(110px * var(--scale));
+  margin-bottom: 0;
 }
+
 .date {
-  font-size: calc(28px * var(--scale));
+  font-size: calc(35px * var(--scale));
+  margin-top: -25px;
+  opacity: 0.85;
 }
 .greeting {
   font-size: calc(32px * var(--scale));
+  transform: translateY(100px);
 }
 .weather {
-  font-size: calc(24px * var(--scale));
+  font-size: calc(27px * var(--scale));
+  margin-top: 50px;
 }

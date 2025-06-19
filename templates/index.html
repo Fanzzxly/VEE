@@ -15,17 +15,22 @@
 </head>
 
 <body>
-  <div class="container">
-    <div id="clock" class="clock">--:--</div>
-    <div id="date" class="date">--, -- --- ----</div>
-    <div id="greeting" class="greeting">...</div>
-    <div class="weather">
-    <img id="weather-icon" src="" alt="Weather Icon" />
-    <div id="weather"></div>
+
+<div class="container">
+  {%include 'components/clock.html' %}
+
+  <div class="weather">
+    {% include 'components/current_weather.html' %}
+    {% include 'components/hourly_weather.html' %}
+  </div>
+
+  {% include 'components/greeting.html' %} 
 </div>
 
 
+  <script type="module" src="/static/js/script.js"></script>
 
-  <script src="/static/script.js"></script>
+
 </body>
+
 </html>
