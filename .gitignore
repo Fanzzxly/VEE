@@ -1,0 +1,13 @@
+# ENV
+.env
+
+# File cache / data
+data/*.json
+
+# VSCode settings
+.vscode/
+*.code-workspace
+
+# System
+.DS_Store
+Thumbs.db

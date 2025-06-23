@@ -1,9 +1,13 @@
 from flask import Flask, render_template, jsonify
 from config import CURRENT_DISPLAY
-from current_parser import get_current_weather
-from forecast_parser import get_hourly_forecast, get_daily_forecast
+from wheater_main_logic import run_periodically
+from wheater_logic.current_ui_parser import get_current_weather
+from wheater_logic.forecast_parser import get_hourly_forecast
 
 app = Flask(__name__)
+
+
+run_periodically()
 
 @app.context_processor
 def inject_config():
@@ -19,18 +23,10 @@ def weather():
     status = 500 if "error" in data else 200
     return jsonify(data), status
 
-@app.route('/forecast/hourly')
-def forecast_hourly():
+@app.route("/weather/hourly")
+def hourly_weather():
     data = get_hourly_forecast()
-    status = 500 if "error" in data else 200
-    return jsonify(data), status
-
-@app.route('/forecast/daily')
-def forecast_daily():
-    data = get_daily_forecast()
-    status = 500 if "error" in data else 200
-    return jsonify(data), status
-
+    return jsonify(data)
 
 if __name__ == '__main__':
     app.run(debug=True)

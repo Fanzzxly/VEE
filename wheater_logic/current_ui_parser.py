@@ -1,14 +1,12 @@
-# weather_parser.py
-
 import json
-from config import CURRENT_WEATHER_FILE
+from config import CURRENT_CLEAN_FILE
 
 def get_current_weather():
     try:
-        with open(CURRENT_WEATHER_FILE, 'r', encoding='utf-8') as f:
+        with open(CURRENT_CLEAN_FILE, 'r', encoding='utf-8') as f:
             raw = json.load(f)
 
-            # Pecah info jadi "22°C - Overcast clouds"
+            # Pecah info jadi "27°C - Overcast clouds"
             info_parts = raw.get("info", "").split("-")
             temp_str = info_parts[0].split("°")[0].strip()
             desc = info_parts[1].strip() if len(info_parts) > 1 else "Tidak diketahui"

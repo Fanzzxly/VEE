@@ -2,7 +2,7 @@ import { FORECAST_REFRESH_INTERVAL } from "./config.js";
 
 async function updateForecastHourly() {
   try {
-    const res = await fetch('/forecast/hourly');
+    const res = await fetch('/weather/hourly');
     const data = await res.json();
 
     const container = document.getElementById('forecast-hourly-list');
@@ -13,7 +13,7 @@ async function updateForecastHourly() {
       const el = document.createElement('div');
       el.className = 'forecast-item';
       el.innerHTML = `
-        <div>${item.hour}</div>
+        <div>${item.time}</div>
         <img src="/static/assets/weather_icon/${item.icon}.png" alt="${item.icon}">
         <div>${item.pop}%</div>
       `;

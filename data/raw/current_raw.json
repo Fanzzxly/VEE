@@ -1,0 +1,47 @@
+{
+  "coord": {
+    "lon": 129.8653,
+    "lat": 33.3344
+  },
+  "weather": [
+    {
+      "id": 501,
+      "main": "Rain",
+      "description": "moderate rain",
+      "icon": "10n"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 23.87,
+    "feels_like": 24.79,
+    "temp_min": 23.87,
+    "temp_max": 23.87,
+    "pressure": 1008,
+    "humidity": 95,
+    "sea_level": 1008,
+    "grnd_level": 993
+  },
+  "visibility": 9808,
+  "wind": {
+    "speed": 1.1,
+    "deg": 120,
+    "gust": 1.59
+  },
+  "rain": {
+    "1h": 2.66
+  },
+  "clouds": {
+    "all": 100
+  },
+  "dt": 1750680678,
+  "sys": {
+    "country": "JP",
+    "sunrise": 1750623112,
+    "sunset": 1750674805
+  },
+  "timezone": 32400,
+  "id": 1861677,
+  "name": "Imarich\u014d-k\u014d",
+  "cod": 200
+}
